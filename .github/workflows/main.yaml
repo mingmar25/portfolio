@@ -16,7 +16,7 @@ jobs:
       - name: Deploy using docker compose
         run: |
           cd /home/mingmar/Downloads/mingmar
-          git fetch origin main
+          git fetch origin master
           git reset --hard origin/master
 
           docker compose up -d --build
