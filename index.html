@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mingmar Tamang — Cybersecurity & Digital Forensics student portfolio. Digital forensics, incident response, ethical hacking, networking and security labs.">
+<meta name="theme-color" content="#070b12">
+<title>Mingmar Tamang | Cybersecurity & Digital Forensics</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root{
+  --bg:#070b12; --bg2:#0b111b; --panel:#0d1521; --panel2:#101b2a;
+  --text:#edf4ff; --muted:#8ea1b8; --line:rgba(142,161,184,.16);
+  --cyan:#45e6ff; --green:#6dff9b; --purple:#a98cff; --danger:#ff6b8a;
+  --max:1180px; --radius:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,system-ui,sans-serif;background:
+  radial-gradient(circle at 80% 5%,rgba(69,230,255,.10),transparent 28rem),
+  radial-gradient(circle at 10% 30%,rgba(169,140,255,.08),transparent 24rem),var(--bg);
+  color:var(--text);line-height:1.6;overflow-x:hidden
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.025;
+background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);
+background-size:40px 40px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+a{color:inherit;text-decoration:none}
+.container{width:min(var(--max),92%);margin:auto}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(7,11,18,.76);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font:600 15px "JetBrains Mono",monospace;letter-spacing:.04em}
+.logo span{color:var(--cyan)}
+.nav-links{display:flex;gap:25px;font-size:13px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:8px 10px}
+section{padding:105px 0}
+.hero{min-height:100vh;display:grid;place-items:center;padding-top:120px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:65px;align-items:center}
+.kicker{font:500 12px "JetBrains Mono";color:var(--green);letter-spacing:.13em;text-transform:uppercase;margin-bottom:18px}
+.kicker:before{content:"// ";color:var(--cyan)}
+h1{font-size:clamp(44px,7vw,78px);line-height:1.02;letter-spacing:-.055em;margin-bottom:22px}
+.gradient{background:linear-gradient(100deg,var(--text),var(--cyan) 58%,var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:18px;color:var(--muted);max-width:650px}
+.hero p strong{color:#cbd8e8;font-weight:600}
+.cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{padding:12px 18px;border-radius:11px;border:1px solid var(--line);font-size:14px;font-weight:600;transition:.2s}
+.btn.primary{background:var(--cyan);color:#041016;border-color:var(--cyan)}
+.btn:hover{transform:translateY(-2px);border-color:rgba(69,230,255,.55)}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:25px;color:var(--muted);font-size:12px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 15px var(--green)}
+.terminal{background:rgba(10,17,27,.9);border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.38);overflow:hidden}
+.term-top{height:40px;display:flex;align-items:center;gap:7px;padding:0 14px;border-bottom:1px solid var(--line);background:#0a111b}
+.ball{width:9px;height:9px;border-radius:50%;background:#304052}
+.term-title{font:11px "JetBrains Mono";color:#61738a;margin-left:8px}
+.term-body{padding:24px;font:13px/1.8 "JetBrains Mono";min-height:350px}
+.prompt{color:var(--green)}.cmd{color:#d9e7f5}.out{color:#8196ad}
+.cursor{display:inline-block;width:8px;height:15px;background:var(--cyan);vertical-align:-2px;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:0}}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:38px}
+.eyebrow{font:600 11px "JetBrains Mono";color:var(--cyan);letter-spacing:.15em;text-transform:uppercase}
+h2{font-size:clamp(30px,4vw,48px);letter-spacing:-.04em;line-height:1.1;margin-top:8px}
+.lead{max-width:570px;color:var(--muted);font-size:15px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{background:linear-gradient(145deg,rgba(16,27,42,.88),rgba(10,17,27,.88));border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.card p{color:var(--muted);font-size:15px}
+.focus{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+.focus div{padding:17px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.018)}
+.focus b{display:block;font-size:14px;margin-bottom:3px}.focus span{font-size:12px;color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.skill{position:relative;overflow:hidden}
+.skill:after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;right:-60px;top:-60px;background:rgba(69,230,255,.06)}
+.icon{font:600 18px "JetBrains Mono";color:var(--cyan);margin-bottom:16px}
+.skill h3{font-size:16px;margin-bottom:7px}.skill p{font-size:13px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+.tag{font:500 11px "JetBrains Mono";padding:6px 8px;border:1px solid var(--line);border-radius:7px;color:#a9bbcf;background:rgba(255,255,255,.018)}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project{min-height:270px;display:flex;flex-direction:column}
+.project-top{display:flex;justify-content:space-between;gap:15px;margin-bottom:20px}
+.number{font:500 12px "JetBrains Mono";color:var(--cyan)}
+.badge{font:500 10px "JetBrains Mono";padding:5px 8px;border-radius:20px;border:1px solid rgba(109,255,155,.25);color:var(--green)}
+.project h3{font-size:21px;margin-bottom:8px}.project p{font-size:13px}
+.project .tags{margin-top:auto;padding-top:20px}
+.timeline{position:relative;margin-left:10px;border-left:1px solid var(--line)}
+.t-item{position:relative;padding:0 0 38px 34px}.t-item:last-child{padding-bottom:0}
+.t-item:before{content:"";position:absolute;left:-5px;top:4px;width:9px;height:9px;border-radius:50%;background:var(--cyan);box-shadow:0 0 15px rgba(69,230,255,.45)}
+.t-date{font:500 11px "JetBrains Mono";color:var(--cyan);margin-bottom:5px}.t-item h3{font-size:17px}.t-item p{font-size:13px;color:var(--muted);max-width:720px}
+.tools-grid{display:flex;flex-wrap:wrap;gap:10px}
+.tool{padding:12px 15px;border:1px solid var(--line);border-radius:12px;background:var(--panel);font:500 12px "JetBrains Mono";color:#b9c9da}
+.tool:hover{border-color:rgba(69,230,255,.35);transform:translateY(-2px)}
+.contact{display:grid;grid-template-columns:1fr .85fr;gap:20px}
+.contact-main{padding:35px}.contact-main h2{margin-bottom:15px}.contact-main p{color:var(--muted);max-width:650px}
+.contact-links{display:grid;gap:10px}
+.contact-link{padding:17px;border:1px solid var(--line);border-radius:14px;background:var(--panel);display:flex;justify-content:space-between;font-size:13px}
+.contact-link span{color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:30px 0;color:#667a91;font:11px "JetBrains Mono"}
+footer .container{display:flex;justify-content:space-between;gap:20px}
+.reveal{opacity:0;transform:translateY(18px);transition:.65s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:850px){
+ .nav-links{display:none}.menu{display:block}.nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;background:#080e17;padding:20px;flex-direction:column;border-bottom:1px solid var(--line)}
+ .hero-grid,.about-grid,.contact{grid-template-columns:1fr}.hero{padding-top:130px}.skills{grid-template-columns:1fr 1fr}.projects{grid-template-columns:1fr}
+}
+@media(max-width:560px){section{padding:78px 0}.skills{grid-template-columns:1fr}.focus{grid-template-columns:1fr}.term-body{font-size:11px}.section-head{display:block}.section-head .lead{margin-top:16px}footer .container{display:block}footer span{display:block;margin-top:8px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home"><span>~/</span>mingmar<span>.</span>sec</a>
+    <button class="menu" aria-label="Open menu">☰</button>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+      <a href="#journey">Journey</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div class="reveal">
+   <div class="kicker">Cybersecurity student · Nepal</div>
+   <h1>Investigate.<br><span class="gradient">Understand.</span><br>Secure.</h1>
+   <p>I’m <strong>Mingmar Tamang</strong>, a Cybersecurity & Digital Forensics student building practical skills across <strong>digital investigations, incident response, networking, ethical hacking and security analysis.</strong></p>
+   <div class="cta">
+    <a class="btn primary" href="#projects">Explore my work ↓</a>
+    <a class="btn" href="#contact">Let's connect</a>
+   </div>
+   <div class="status"><span class="dot"></span> Currently learning & building in cybersecurity</div>
+  </div>
+  <div class="terminal reveal">
+   <div class="term-top"><i class="ball"></i><i class="ball"></i><i class="ball"></i><span class="term-title">mingmar@forensics:~</span></div>
+   <div class="term-body">
+    <div><span class="prompt">mingmar@forensics</span>:~$ <span class="cmd">whoami</span></div>
+    <div class="out">Cybersecurity & Digital Forensics Student</div><br>
+    <div><span class="prompt">mingmar@forensics</span>:~$ <span class="cmd">cat focus.txt</span></div>
+    <div class="out">digital evidence<br>incident response<br>network investigation<br>security testing</div><br>
+    <div><span class="prompt">mingmar@forensics</span>:~$ <span class="cmd">ls ~/toolkit</span></div>
+    <div class="out">Autopsy  FTK_Imager  Volatility  Wireshark<br>Kali_Linux  TryHackMe  Packet_Tracer</div><br>
+    <div><span class="prompt">mingmar@forensics</span>:~$ <span class="cursor"></span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="container">
+  <div class="section-head reveal"><div><div class="eyebrow">01 / about</div><h2>Curious by nature.<br>Forensic by mindset.</h2></div>
+  <p class="lead">I’m developing my cybersecurity career around the part I enjoy most: turning technical evidence into answers.</p></div>
+  <div class="about-grid">
+   <div class="card reveal">
+    <p>My main interest is <strong>Digital Forensics</strong> — investigating what happened during a security incident, preserving evidence, analysing artifacts and connecting technical findings into a clear story.</p>
+    <p style="margin-top:15px">Alongside forensics, I’ve been building foundations in ethical hacking, web security, networking, secure software development and incident response through coursework, labs and practical projects.</p>
+    <div class="focus">
+     <div><b>Digital Forensics</b><span>Evidence · artifacts · investigation</span></div>
+     <div><b>Incident Response</b><span>Contain · analyse · recover</span></div>
+     <div><b>Security Testing</b><span>Recon · OWASP · VAPT</span></div>
+     <div><b>Network Security</b><span>Traffic · protocols · architecture</span></div>
+    </div>
+   </div>
+   <div class="card reveal">
+    <div class="eyebrow">career direction</div>
+    <h3 style="font-size:24px;margin:10px 0">Digital Forensics Analyst</h3>
+    <p>I want to grow into a professional who can investigate cyber incidents, analyse digital evidence and support organisations during security investigations.</p>
+    <div class="tags">
+      <span class="tag">DFIR</span><span class="tag">Evidence Analysis</span><span class="tag">Memory Forensics</span>
+      <span class="tag">Network Forensics</span><span class="tag">Incident Response</span><span class="tag">Cyber Investigation</span>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="skills">
+ <div class="container">
+  <div class="section-head reveal"><div><div class="eyebrow">02 / capabilities</div><h2>My security toolkit.</h2></div><p class="lead">A growing technical stack built through university work, labs and self-directed learning.</p></div>
+  <div class="skills">
+   <div class="card skill reveal"><div class="icon">01 //</div><h3>Digital Forensics</h3><p>Practical exposure to evidence acquisition, file-system analysis, memory analysis and forensic investigation workflows.</p><div class="tags"><span class="tag">Autopsy</span><span class="tag">FTK Imager</span><span class="tag">Volatility</span><span class="tag">Ghidra</span></div></div>
+   <div class="card skill reveal"><div class="icon">02 //</div><h3>Network Analysis</h3><p>Understanding traffic, protocols, network architecture and investigation using packet-level evidence.</p><div class="tags"><span class="tag">Wireshark</span><span class="tag">TCP/IP</span><span class="tag">Packet Tracer</span><span class="tag">OSPF</span></div></div>
+   <div class="card skill reveal"><div class="icon">03 //</div><h3>Ethical Hacking</h3><p>Hands-on learning in controlled labs covering reconnaissance, web vulnerabilities, enumeration and exploitation concepts.</p><div class="tags"><span class="tag">Kali Linux</span><span class="tag">OWASP Top 10</span><span class="tag">Nmap</span><span class="tag">Pwntools</span></div></div>
+   <div class="card skill reveal"><div class="icon">04 //</div><h3>Incident Response</h3><p>Learning to move from initial evidence to investigation, analysis, containment and clear technical reporting.</p><div class="tags"><span class="tag">IR</span><span class="tag">MITRE ATT&CK</span><span class="tag">Logs</span><span class="tag">Evidence</span></div></div>
+   <div class="card skill reveal"><div class="icon">05 //</div><h3>Security & Governance</h3><p>Building understanding of security controls, risk treatment, governance, NIST concepts and cyber resilience.</p><div class="tags"><span class="tag">NIST</span><span class="tag">Risk</span><span class="tag">Controls</span><span class="tag">Governance</span></div></div>
+   <div class="card skill reveal"><div class="icon">06 //</div><h3>Networking</h3><p>Designing and securing enterprise-style network environments as part of academic practical work.</p><div class="tags"><span class="tag">VLAN</span><span class="tag">DHCP/DNS</span><span class="tag">ASA</span><span class="tag">IPsec VPN</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="container">
+  <div class="section-head reveal"><div><div class="eyebrow">03 / selected work</div><h2>Labs, investigations<br>& builds.</h2></div><p class="lead">Selected academic and hands-on work that reflects how I’m developing my security skills.</p></div>
+  <div class="projects">
+   <article class="card project reveal"><div class="project-top"><span class="number">01 / DFIR</span><span class="badge">Forensics</span></div><h3>Keed Loan Financial Breach — Forensic Investigation</h3><p>Academic forensic investigation covering email, network and memory evidence, incident response and MITRE ATT&CK mapping. The workflow explored acquisition, analysis and interpretation of digital evidence.</p><div class="tags"><span class="tag">FTK Imager</span><span class="tag">Volatility</span><span class="tag">Wireshark</span><span class="tag">Ghidra</span><span class="tag">MITRE</span></div></article>
+   <article class="card project reveal"><div class="project-top"><span class="number">02 / LABS</span><span class="badge">Hands-on</span></div><h3>TryHackMe Security Labs</h3><p>Practical learning across OWASP Top 10, broken access control, Active Directory fundamentals, Linux exploitation and security investigation concepts.</p><div class="tags"><span class="tag">OWASP</span><span class="tag">AD</span><span class="tag">Linux</span><span class="tag">Pwntools</span><span class="tag">Web Security</span></div></article>
+   <article class="card project reveal"><div class="project-top"><span class="number">03 / NETWORK</span><span class="badge">Architecture</span></div><h3>SecureNet Technologies — Enterprise Network</h3><p>Packet Tracer design work covering hierarchical networking, VLANs, routing, redundancy, security controls and enterprise services.</p><div class="tags"><span class="tag">OSPF</span><span class="tag">VLAN/VTP</span><span class="tag">HSRP</span><span class="tag">RSTP</span><span class="tag">ASA</span><span class="tag">IPsec</span></div></article>
+   <article class="card project reveal"><div class="project-top"><span class="number">04 / ANALYSIS</span><span class="badge">Investigation</span></div><h3>Memory & Network Forensics Practice</h3><p>Hands-on practice with memory profiles, process analysis and network traffic investigation, building the habit of validating evidence instead of relying on assumptions.</p><div class="tags"><span class="tag">Volatility</span><span class="tag">Wireshark</span><span class="tag">Memory</span><span class="tag">PCAP</span></div></article>
+  </div>
+ </div>
+</section>
+
+<section id="journey">
+ <div class="container">
+  <div class="section-head reveal"><div><div class="eyebrow">04 / journey</div><h2>Learning in progress.</h2></div><p class="lead">I’m treating cybersecurity as a continuous investigation — every lab adds another piece of the picture.</p></div>
+  <div class="card reveal">
+   <div class="timeline">
+    <div class="t-item"><div class="t-date">CURRENT</div><h3>BSc (Hons) Cyber Security & Digital Forensics</h3><p>Building academic foundations across networking, ethical hacking, secure software development and digital forensics.</p></div>
+    <div class="t-item"><div class="t-date">PRACTICAL LEARNING</div><h3>Forensics + security labs</h3><p>Practising with Autopsy, FTK Imager, Volatility and Wireshark while using controlled environments to learn security testing.</p></div>
+    <div class="t-item"><div class="t-date">NEXT MILESTONE</div><h3>Professional certification roadmap</h3><p>Planning to work toward CompTIA Security+, then deeper forensic certifications such as GIAC GCFE / GCFA as experience and preparation develop.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="container">
+  <div class="section-head reveal"><div><div class="eyebrow">05 / technology</div><h2>Tools I’m exploring.</h2></div><p class="lead">Not a claim of mastery — this is a snapshot of the technologies I’m actively learning or have used in labs and coursework.</p></div>
+  <div class="tools-grid reveal">
+   <span class="tool">Autopsy</span><span class="tool">FTK Imager</span><span class="tool">Volatility</span><span class="tool">Wireshark</span><span class="tool">Ghidra</span><span class="tool">Kali Linux</span><span class="tool">Nmap</span><span class="tool">Pwntools</span><span class="tool">TryHackMe</span><span class="tool">Cisco Packet Tracer</span><span class="tool">Git / GitHub</span><span class="tool">Python</span><span class="tool">Linux</span><span class="tool">TCP/IP</span>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="container">
+  <div class="card contact reveal">
+   <div class="contact-main"><div class="eyebrow">06 / contact</div><h2>Let’s connect.</h2><p>Interested in cybersecurity, digital forensics, security labs or learning opportunities? I’m always open to connecting with people who enjoy solving technical problems and building safer systems. Contact details will be added here when available.</p></div>
+   <div class="contact-links">
+    <div class="contact-link"><span>Email</span><b>Available on request</b></div>
+    <div class="contact-link"><span>Professional profiles</span><b>Links coming soon</b></div>
+    <div class="contact-link"><span>Based in</span><b>Nepal 🇳🇵</b></div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer><div class="container"><span>© 2026 Mingmar Tamang</span><span>Built with curiosity, evidence & a security mindset.</span></div></footer>
+
+<script>
+const menu=document.querySelector('.menu'), links=document.querySelector('.nav-links');
+menu.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

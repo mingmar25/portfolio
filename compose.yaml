@@ -1,0 +1,16 @@
+services:
+  mingmar-portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mingmar-portfolio:local
+    container_name: mingmar-portfolio
+    ports:
+      - "127.0.0.1:${PORTFOLIO_PORT:-8081}:80"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1/"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
